@@ -13,6 +13,27 @@ body{
     line-height:1.9;
 }
 
+/* ===== TRANSIÇÃO ===== */
+
+.transition{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#f8f3ea;
+    z-index:9999;
+    pointer-events:none;
+    opacity:0;
+    transition:0.6s;
+}
+
+/* QUANDO SAI */
+
+.transition.ativo{
+    opacity:1;
+}
+
 /* ===== MENU ===== */
 header{
     width:100%;
@@ -351,51 +372,87 @@ section p{
     border-radius:22px;
 }
 
- 
-/* ===== RESPONSIVO ===== */
+/* ===== CONTAINER ===== */
 
-@media(max-width:900px){
+.carousel-container{
 
-.container{
-    grid-template-columns:1fr;
+    width:100%;
+
+    overflow:hidden;
+
+    padding:40px 0;
+
+}
+
+/* ===== LINHA ===== */
+
+.carousel-track{
+
+    display:flex;
+
+    align-items:center;
+
     gap:25px;
+
+    width:max-content;
+
 }
 
-.album{
-    flex-direction:column;
-    text-align:center;
-    padding:25px;
+/* ===== CARD ===== */
+
+.cor{
+
+    width:220px;
+
+    height:220px;
+
+    flex-shrink:0;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.18);
+
 }
 
-.image-placeholder{
+/* ===== IMAGEM ===== */
+
+.cor img{
+
     width:100%;
-    max-width:280px;
-    height:280px;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
 }
 
-h1{
-    font-size:42px;
-}
+/* ===== TEXTO ===== */
 
-h2{
-    font-size:30px;
-}
+.cor p{
 
-.genre{
-    font-size:24px;
-}
+    position:absolute;
 
-.subgenre{
-    font-size:16px;
-}
+    bottom:14px;
 
-.description{
-    font-size:17px;
-}
+    left:50%;
 
-.card{
-    width:100%;
-    max-width:360px;
-}
+    transform:translateX(-50%);
+
+    background:rgba(0,0,0,0.35);
+
+    color:white;
+
+    padding:8px 18px;
+
+    border-radius:20px;
+
+    font-size:18px;
 
 }
