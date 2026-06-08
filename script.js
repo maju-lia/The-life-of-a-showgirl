@@ -108,29 +108,22 @@ function criarGlitter(){
     }, 7000);
 
 }
+for(let i=0;i<30;i++){
+    const s=document.createElement("div");
+    s.className="star";
+    s.innerHTML="★";
 
-const carousel =
-document.getElementById("carousel");
+    s.style.left=Math.random()*100+"%";
+    s.style.top=Math.random()*100+"%";
+    s.style.fontSize=(10+Math.random()*20)+"px";
 
-let scroll = 0;
-
-function animar(){
-
-    scroll += 1;
-
-    carousel.style.transform =
-    `translateX(-${scroll}px)`;
-
-    /* REINICIA */
-
-    if(scroll >= 1000){
-
-        scroll = 0;
-
-    }
-
-    requestAnimationFrame(animar);
-
+    document.getElementById("estrelas").appendChild(s);
 }
+let itens = 0;
 
-animar(); 
+function adicionarCarrinho(){
+    itens++;
+    document.getElementById("carrinho").innerHTML =
+    "Carrinho: " + itens + " itens";
+}
+ 

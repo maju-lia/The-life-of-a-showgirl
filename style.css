@@ -6,15 +6,36 @@
 }
 
 /* ===== BODY ===== */
+#estrelas{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.star{
+    position:absolute;
+    color:#d86d2b;
+    animation:piscar 3s infinite;
+}
+
+@keyframes piscar{
+    0%,100%{opacity:.3;}
+    50%{opacity:1;}
+}
+
 body{
-    font-family: Georgia, serif; /* letra como estava */
+    font-family:Georgia, serif;
     background:#ece7de;
     color:#1e1e1e;
     line-height:1.9;
 }
 
-/* ===== TRANSIÇÃO ===== */
+html{
+    scroll-behavior:smooth;
+}
 
+/* ===== TRANSIÇÃO ===== */
 .transition{
     position:fixed;
     top:0;
@@ -27,8 +48,6 @@ body{
     opacity:0;
     transition:0.6s;
 }
-
-/* QUANDO SAI */
 
 .transition.ativo{
     opacity:1;
@@ -63,9 +82,7 @@ header{
 .menu a:hover{
     color:#b8860b;
 }
-html{
-    scroll-behavior:smooth;
-}
+
 /* ===== MAIN ===== */
 main{
     max-width:1200px;
@@ -91,37 +108,38 @@ main{
 
 /* ===== TITULOS ===== */
 h1{
-    text-align: center;
-    font-size: 42px; /* diminuído */
-    margin: 60px 0 15px;
-    color: #1c2230;
-    letter-spacing: 2px;
+    text-align:center;
+    font-size:42px;
+    margin:60px 0 15px;
+    color:#1c2230;
+    letter-spacing:2px;
 }
 
 h2{
-    text-align: center;
-    font-size: 36px; /* diminuído */
-    margin-bottom: 35px;
-    color: #1c2230;
+    text-align:center;
+    font-size:36px;
+    margin-bottom:35px;
+    color:#1c2230;
 }
 
 /* ===== TEXTO ===== */
 .texto{
-    max-width: 900px;
-    margin: auto;
+    max-width:900px;
+    margin:auto;
 }
 
 .texto p{
-    font-size: 18px; /* bem mais confortável */
-    text-align: justify;
-    margin-bottom: 25px;
-    color: #2f2f2f;
-    line-height: 1.7;
-}
-
+    font-size:18px;
+    text-align:justify;
+    margin-bottom:25px;
+    color:#2f2f2f;
+    line-height:1.7;
 }
 
 /* ===== FAIXAS ===== */
+.subtitle{
+    text-align:center;
+}
 
 .description{
     text-align:center;
@@ -133,10 +151,6 @@ h2{
     line-height:1.8;
 }
 
-   .subtitle{
-   text-align:center;
-}
-
 .container{
     max-width:1350px;
     margin:auto;
@@ -146,7 +160,6 @@ h2{
     padding:0 30px 80px;
 }
 
-/* CARD DAS FAIXAS */
 .album{
     display:flex;
     align-items:center;
@@ -169,7 +182,6 @@ h2{
     0 0 20px rgba(212,175,55,0.15);
 }
 
-/* IMAGEM */
 .image-placeholder{
     width:160px;
     height:160px;
@@ -184,7 +196,6 @@ h2{
     transform:scale(1.03);
 }
 
-/* TÍTULO DA FAIXA */
 .genre{
     font-size:28px;
     font-weight:bold;
@@ -193,7 +204,6 @@ h2{
     letter-spacing:0.5px;
 }
 
-/* SUBTÍTULO */
 .subgenre{
     color:#6d6d6d;
     font-size:17px;
@@ -201,7 +211,6 @@ h2{
     line-height:1.6;
 }
 
-/* BOTÃO SPOTIFY */
 .spotify{
     display:inline-block;
     margin-top:8px;
@@ -223,7 +232,6 @@ h2{
 }
 
 /* ===== CLIPES ===== */
-
 .videos{
     max-width:1350px;
     margin:auto;
@@ -234,7 +242,6 @@ h2{
     padding:0 25px 90px;
 }
 
-/* CARD DOS CLIPES */
 .card{
     width:330px;
     background:rgba(255,255,255,0.75);
@@ -256,7 +263,6 @@ h2{
     0 0 20px rgba(212,175,55,0.15);
 }
 
-/* THUMBNAIL */
 .card img{
     width:100%;
     height:190px;
@@ -270,7 +276,6 @@ h2{
     transform:scale(1.02);
 }
 
-/* TITULO DO CLIPE */
 .card h4{
     font-size:26px;
     margin-top:18px;
@@ -278,7 +283,6 @@ h2{
     letter-spacing:0.5px;
 }
 
-/* TEXO */
 .card p{
     color:#666;
     margin-top:10px;
@@ -286,7 +290,6 @@ h2{
     line-height:1.6;
 }
 
-/* BOTÃO */
 .botao{
     display:inline-block;
     margin-top:20px;
@@ -305,22 +308,7 @@ h2{
     background:linear-gradient(135deg,#22d863,#179443);
 }
 
-/* ===== TEXTO ===== */
-.texto{
-    max-width: 900px;
-    margin: auto;
-}
-
-.texto p{
-    font-size: 18px; /* bem mais confortável */
-    text-align: justify;
-    margin-bottom: 25px;
-    color: #2f2f2f;
-    line-height: 1.7;
-}
-
 /* ===== ESTÉTICA ===== */
-
 section{
     max-width:1100px;
     margin:auto;
@@ -335,19 +323,16 @@ section p{
     color:#4a3a2a;
 }
 
-/* GRID DAS IMAGENS */
-
+/* ===== GALERIA ===== */
 .galeria{
     display:grid;
-    grid-template-columns:repeat(4, 1fr);
+    grid-template-columns:repeat(4,1fr);
     gap:22px;
 }
 
-/* IMAGENS QUADRADAS */
-
 .galeria img{
     width:100%;
-    aspect-ratio:1/1; /* DEIXA QUADRADA */
+    aspect-ratio:1/1;
     object-fit:cover;
     border-radius:22px;
     transition:0.4s;
@@ -355,104 +340,110 @@ section p{
     cursor:pointer;
 }
 
-/* HOVER */
-
 .galeria img:hover{
     transform:scale(1.03);
     box-shadow:0 20px 45px rgba(0,0,0,0.30);
 }
 
- 
-/* EFEITO CINEMATOGRÁFICO */
-
-.galeria img::after{
-    content:'';
-    position:absolute;
-    inset:0;
-    border-radius:22px;
-}
-
-/* ===== CONTAINER ===== */
-
-.carousel-container{
-
-    width:100%;
-
-    overflow:hidden;
-
-    padding:40px 0;
-
-}
-
-/* ===== LINHA ===== */
-
-.carousel-track{
-
+/* ===== PALETA ===== */
+.paleta{
     display:flex;
-
+    justify-content:center;
     align-items:center;
-
     gap:25px;
-
-    width:max-content;
-
+    flex-wrap:nowrap;
+    margin:50px auto 80px;
 }
-
-/* ===== CARD ===== */
 
 .cor{
-
     width:220px;
-
     height:220px;
-
-    flex-shrink:0;
-
-    border-radius:22px;
-
-    overflow:hidden;
-
     position:relative;
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,0.18);
-
+    overflow:hidden;
+    border-radius:22px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.18);
 }
-
-/* ===== IMAGEM ===== */
 
 .cor img{
-
     width:100%;
-
     height:100%;
-
     object-fit:cover;
-
     display:block;
-
 }
 
-/* ===== TEXTO ===== */
-
 .cor p{
-
     position:absolute;
-
     bottom:14px;
-
     left:50%;
-
     transform:translateX(-50%);
-
     background:rgba(0,0,0,0.35);
-
     color:white;
-
     padding:8px 18px;
-
     border-radius:20px;
-
     font-size:18px;
+}
 
+/* ===== FOOTER ===== */
+footer{
+    text-align:center;
+    padding:40px 20px;
+    margin-top:50px;
+    font-size:18px;
+    line-height:2;
+    color:#2f2f2f;
+}
+.loja{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:30px;
+}
+
+.produto{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.10);
+    transition:.3s;
+}
+
+.produto:hover{
+    transform:translateY(-8px);
+}
+
+.produto img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+.produto h3{
+    margin-top:15px;
+    font-size:24px;
+}
+
+.produto p{
+    font-size:20px;
+    margin:10px 0;
+    color:#b8860b;
+    font-weight:bold;
+}
+
+.produto button{
+    margin:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:#d4af37;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.produto button:hover{
+    background:#b8860b;
 }
